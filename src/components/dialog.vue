@@ -12,7 +12,8 @@
         </button>
       </div>
       <div class="o-dialog__body">
-        <span>这是一段信息</span>
+        <!-- 默认插槽 -->
+        <slot></slot>
       </div>
       <div class="o-dialog__footer">
         <o-button>取消</o-button>

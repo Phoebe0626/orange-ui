@@ -54,7 +54,13 @@
     </div> -->
 
     <!-- <o-dialog title="温馨提示" width="60%" top="200px"></o-dialog> -->
-    <o-dialog></o-dialog>
+    <o-dialog>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </o-dialog>
   </div>
 </template>
 
