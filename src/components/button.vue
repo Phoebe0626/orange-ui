@@ -7,7 +7,9 @@
       {'is-circle': circle}
     ]"
   >
-    <span><slot></slot></span>
+    <i v-if="icon" :class="icon"></i>
+    <!-- 如果没有传入任何内容 不显示 span  -->
+    <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
 
@@ -30,10 +32,11 @@ export default {
     circle: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: String,
+      default: ''
     }
-  },
-  created () {
-    console.log(this.ghost)
   }
 }
 </script>
@@ -191,5 +194,10 @@ export default {
 .o-button.is-circle {
   border-radius: 50%;
   padding: 12px;
+}
+
+// 图标和文字添加间隙
+.o-button [class*=o-icon-]+span {
+  margin-left: 5px;
 }
 </style>

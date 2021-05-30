@@ -32,6 +32,10 @@
       <o-button circle ghost type="error">拆</o-button>
       <o-button circle ghost>拆</o-button>
     </div>
+    <div class="row">
+      <o-button type="success" icon="o-icon-home">home</o-button>
+      <o-button icon="o-icon-delete" circle></o-button>
+    </div>
   </div>
 </template>
 
