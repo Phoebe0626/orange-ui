@@ -2,7 +2,9 @@
   <div class="o-dialog__wrapper">
     <div class="o-dialog">
       <div class="o-dialog__header">
-        <span class="o-dialog__title">提示</span>
+        <slot name="title">
+          <span class="o-dialog__title">{{ title }}</span>
+        </slot>
         <button class="o-dialog__headerbtn">
           <i class="o-icon-unchecked"></i>
         </button>
@@ -20,7 +22,13 @@
 
 <script>
 export default {
-  name: 'ODialog'
+  name: 'ODialog',
+  props: {
+    title: {
+      type: String,
+      default: '提示'
+    }
+  }
 }
 </script>
 
