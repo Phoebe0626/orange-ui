@@ -53,13 +53,8 @@
       <o-button ghost disabled>按钮</o-button>
     </div> -->
 
-    <o-dialog
-      title="温馨提示"
-    >
-      <!-- <template #title>
-        <h3>我是标题h3</h3>
-      </template> -->
-    </o-dialog>
+    <!-- <o-dialog title="温馨提示" width="60%" top="200px"></o-dialog> -->
+    <o-dialog></o-dialog>
   </div>
 </template>
 

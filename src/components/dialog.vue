@@ -1,6 +1,8 @@
 <template>
   <div class="o-dialog__wrapper">
-    <div class="o-dialog">
+    <div class="o-dialog"
+      :style="{width, marginTop: top}"
+    >
       <div class="o-dialog__header">
         <slot name="title">
           <span class="o-dialog__title">{{ title }}</span>
@@ -27,6 +29,14 @@ export default {
     title: {
       type: String,
       default: '提示'
+    },
+    width: {
+      type: String,
+      default: '50%'
+    },
+    top: {
+      type: String,
+      default: '15vh'
     }
   }
 }
