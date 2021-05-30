@@ -36,6 +36,22 @@
       <o-button type="success" icon="o-icon-home">home</o-button>
       <o-button icon="o-icon-delete" circle @click="fn"></o-button>
     </div>
+    <div class="row">
+      <o-button disabled type="primary">按钮</o-button>
+      <o-button disabled type="success">按钮</o-button>
+      <o-button disabled type="info">按钮</o-button>
+      <o-button disabled type="warning">按钮</o-button>
+      <o-button disabled type="error">按钮</o-button>
+      <o-button disabled>按钮</o-button>
+    </div>
+    <div class="row">
+      <o-button ghost disabled type="primary">按钮</o-button>
+      <o-button ghost disabled type="success">按钮</o-button>
+      <o-button ghost disabled type="info">按钮</o-button>
+      <o-button ghost disabled type="warning">按钮</o-button>
+      <o-button ghost disabled type="error">按钮</o-button>
+      <o-button ghost disabled>按钮</o-button>
+    </div>
   </div>
 </template>
 
@@ -43,8 +59,8 @@
 export default {
   name: 'App',
   methods: {
-    fn () {
-      console.log('触发点击事件')
+    fn (e) {
+      console.log(e, '触发点击事件')
     }
   }
 }

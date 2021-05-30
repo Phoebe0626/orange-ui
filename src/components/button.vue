@@ -4,8 +4,10 @@
     :class="[`o-button--${type}`,
       {'is-ghost': ghost},
       {'is-round': round},
-      {'is-circle': circle}
+      {'is-circle': circle},
+      {'is-disabled': disabled}
     ]"
+    :disabled="disabled"
     @click="handleClick"
   >
     <i v-if="icon" :class="icon"></i>
@@ -37,6 +39,10 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -206,4 +212,72 @@ export default {
 .o-button [class*=o-icon-]+span {
   margin-left: 5px;
 }
+
+// 禁用普通按钮
+.o-button--default.is-disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+  }
+}
+.o-button--primary.is-disabled {
+  background-color: #a0cfff;
+  border-color: #a0cfff;
+  cursor: not-allowed;
+}
+.o-button--success.is-disabled {
+  background-color: #b3e19d;
+  border-color: #b3e19d;
+  cursor: not-allowed;
+}
+.o-button--info.is-disabled {
+  background-color: #a0cddd;
+  border-color: #a0cddd;
+  cursor: not-allowed;
+}
+.o-button--warning.is-disabled {
+  background-color: #f3d19e;
+  border-color: #f3d19e;
+  cursor: not-allowed;
+}
+.o-button--error.is-disabled {
+  background-color: #fab6b6;
+  border-color: #fab6b6;
+  cursor: not-allowed;
+}
+
+// 禁用幽灵按钮
+.o-button--default.is-ghost.is-disabled {
+  color: #c0c4cc;
+  background-color: #fff;
+  border-color: #ebeef5;
+}
+.o-button--primary.is-ghost.is-disabled {
+  color: #8cc5ff;
+  background-color: #ecf5ff;
+  border-color: #d9ecff;
+}
+.o-button--success.is-ghost.is-disabled {
+  color: #a4da89;
+  background-color: #f0f9eb;
+  border-color: #e1f3d8;
+}
+.o-button--info.is-ghost.is-disabled {
+  color: #8cc5fd;
+  background-color: #dcf1fd;
+  border-color: #d9ecfd;
+}
+.o-button--warning.is-ghost.is-disabled {
+  color: #f0c78a;
+  background-color: #fdf6ec;
+  border-color: #faecd8;
+}
+.o-button--error.is-ghost.is-disabled {
+  color: #f9a7a7;
+  background-color: #fef0f0;
+  border-color: #fde2e2;
+}
+
 </style>
