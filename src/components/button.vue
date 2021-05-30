@@ -6,6 +6,7 @@
       {'is-round': round},
       {'is-circle': circle}
     ]"
+    @click="handleClick"
   >
     <i v-if="icon" :class="icon"></i>
     <!-- 如果没有传入任何内容 不显示 span  -->
@@ -36,6 +37,11 @@ export default {
     icon: {
       type: String,
       default: ''
+    }
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
     }
   }
 }

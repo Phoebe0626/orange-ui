@@ -34,14 +34,19 @@
     </div>
     <div class="row">
       <o-button type="success" icon="o-icon-home">home</o-button>
-      <o-button icon="o-icon-delete" circle></o-button>
+      <o-button icon="o-icon-delete" circle @click="fn"></o-button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    fn () {
+      console.log('触发点击事件')
+    }
+  }
 }
 </script>
 
