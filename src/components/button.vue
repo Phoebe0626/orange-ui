@@ -3,7 +3,8 @@
     class="o-button"
     :class="[`o-button--${type}`,
       {'is-ghost': ghost},
-      {'is-round': round}
+      {'is-round': round},
+      {'is-circle': circle}
     ]"
   >
     <span><slot></slot></span>
@@ -23,6 +24,10 @@ export default {
       default: false
     },
     round: {
+      type: Boolean,
+      default: false
+    },
+    circle: {
       type: Boolean,
       default: false
     }

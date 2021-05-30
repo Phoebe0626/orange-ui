@@ -24,6 +24,14 @@
       <o-button round ghost type="error">按钮</o-button>
       <o-button round ghost>按钮</o-button>
     </div>
+    <div class="row">
+      <o-button circle ghost type="primary">拆</o-button>
+      <o-button circle ghost type="success">拆</o-button>
+      <o-button circle ghost type="info">拆</o-button>
+      <o-button circle ghost type="warning">拆</o-button>
+      <o-button circle ghost type="error">拆</o-button>
+      <o-button circle ghost>拆</o-button>
+    </div>
   </div>
 </template>
 
