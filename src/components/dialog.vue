@@ -15,9 +15,8 @@
         <!-- 默认插槽 -->
         <slot></slot>
       </div>
-      <div class="o-dialog__footer">
-        <o-button>取消</o-button>
-        <o-button type="primary">确定</o-button>
+      <div v-if="$slots.footer" class="o-dialog__footer">
+        <slot name="footer"></slot>
       </div>
     </div>
   </div>

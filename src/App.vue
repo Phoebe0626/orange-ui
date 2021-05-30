@@ -60,6 +60,10 @@
         <li>2</li>
         <li>3</li>
       </ul>
+      <template #footer>
+        <o-button type="primary">确定</o-button>
+        <o-button>取消</o-button>
+      </template>
     </o-dialog>
   </div>
 </template>
