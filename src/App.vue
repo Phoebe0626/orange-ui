@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="row">
+    <!-- <div class="row">
       <o-button type="primary">按钮</o-button>
       <o-button type="success">按钮</o-button>
       <o-button type="info">按钮</o-button>
@@ -51,7 +51,9 @@
       <o-button ghost disabled type="warning">按钮</o-button>
       <o-button ghost disabled type="error">按钮</o-button>
       <o-button ghost disabled>按钮</o-button>
-    </div>
+    </div> -->
+
+    <o-dialog></o-dialog>
   </div>
 </template>
 
