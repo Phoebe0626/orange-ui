@@ -1,5 +1,8 @@
 <template>
-  <div class="o-dialog__wrapper">
+  <div class="o-dialog__wrapper"
+    v-show="visible"
+    @click.self="handleClose"
+  >
     <div class="o-dialog"
       :style="{width, marginTop: top}"
     >
@@ -7,7 +10,7 @@
         <slot name="title">
           <span class="o-dialog__title">{{ title }}</span>
         </slot>
-        <button class="o-dialog__headerbtn">
+        <button class="o-dialog__headerbtn" @click="handleClose">
           <i class="o-icon-unchecked"></i>
         </button>
       </div>
@@ -37,6 +40,16 @@ export default {
     top: {
       type: String,
       default: '15vh'
+    },
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    handleClose () {
+      console.log('hah')
+      this.$emit('close', false)
     }
   }
 }

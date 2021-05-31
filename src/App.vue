@@ -54,15 +54,16 @@
     </div> -->
 
     <!-- <o-dialog title="温馨提示" width="60%" top="200px"></o-dialog> -->
-    <o-dialog>
+    <o-button type="primary" @click="visible = true">显示</o-button>
+    <o-dialog :visible="visible" @close="close">
       <ul>
         <li>1</li>
         <li>2</li>
         <li>3</li>
       </ul>
       <template #footer>
-        <o-button type="primary">确定</o-button>
-        <o-button>取消</o-button>
+        <o-button type="primary" @click="visible = false">确定</o-button>
+        <o-button @click="visible = false">取消</o-button>
       </template>
     </o-dialog>
   </div>
@@ -71,9 +72,17 @@
 <script>
 export default {
   name: 'App',
+  data () {
+    return {
+      visible: false
+    }
+  },
   methods: {
     fn (e) {
       console.log(e, '触发点击事件')
+    },
+    close (value) {
+      this.visible = value
     }
   }
 }
