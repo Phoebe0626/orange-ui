@@ -55,7 +55,7 @@
 
     <!-- <o-dialog title="温馨提示" width="60%" top="200px"></o-dialog> -->
     <o-button type="primary" @click="visible = true">显示</o-button>
-    <o-dialog :visible="visible" @close="close">
+    <o-dialog :visible.sync="visible">
       <ul>
         <li>1</li>
         <li>2</li>
@@ -80,9 +80,6 @@ export default {
   methods: {
     fn (e) {
       console.log(e, '触发点击事件')
-    },
-    close (value) {
-      this.visible = value
     }
   }
 }

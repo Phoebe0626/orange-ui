@@ -48,8 +48,7 @@ export default {
   },
   methods: {
     handleClose () {
-      console.log('hah')
-      this.$emit('close', false)
+      this.$emit('update:visible', false)
     }
   }
 }
