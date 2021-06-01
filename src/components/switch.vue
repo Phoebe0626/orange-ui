@@ -1,8 +1,9 @@
 <template>
-  <label class="o-switch" :class="{'is-checked': value}" @click="handleSwitch">
+  <label class="o-switch" :class="{'is-checked': value}">
     <span class="o-switch__core" ref="core">
       <div class="o-switch__button"></div>
     </span>
+    <input @change="handleSwitch" class="o-switch__input" type="checkbox" :name="name">
   </label>
 </template>
 
@@ -19,6 +20,10 @@ export default {
       default: ''
     },
     inactiveColor: {
+      type: String,
+      default: ''
+    },
+    name: {
       type: String,
       default: ''
     }
@@ -54,6 +59,13 @@ export default {
   line-height: 20px;
   height: 20px;
   // vertical-align: middle;
+  .o-switch__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+  }
   .o-switch__core {
     margin: 0;
     // display: inline-block;
