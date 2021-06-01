@@ -2,7 +2,7 @@
   <div class="o-input" :class="{'o-input--suffix': showSuffix}">
     <input
       class="o-input__inner"
-      :type="type"
+      :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
       :class="{'is-disabled': disabled}"
       :placeholder="placeholder"
       :name="name"
@@ -12,7 +12,7 @@
     >
     <span class="o-input__suffix" v-if="showSuffix">
       <i class="o-input__icon o-icon-close" v-if="clearable && value" @click="clear"></i>
-      <i class="o-input__icon o-icon-view" v-if="showPassword"></i>
+      <i class="o-input__icon o-icon-view" :class="{'o-icon-view-acitve': passwordVisible}" v-if="showPassword" @click="handlePassword"></i>
     </span>
   </div>
 </template>
@@ -55,10 +55,21 @@ export default {
       return this.clearable || this.showPassword
     }
   },
+  data () {
+    return {
+      passwordVisible: false
+    }
+  },
   methods: {
+    // 密码的显示隐藏
+    handlePassword () {
+      this.passwordVisible = !this.passwordVisible
+    },
+    // 清空内容
     clear () {
       this.$emit('input', '')
     },
+    // 双向绑定 v-model
     handleInput (e) {
       this.$emit('input', e.target.value)
     }
@@ -120,6 +131,9 @@ export default {
         font-size: 14px;
         cursor: pointer;
         transition: color .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .o-icon-view-acitve {
+        color: #409eff;
       }
     }
   }
