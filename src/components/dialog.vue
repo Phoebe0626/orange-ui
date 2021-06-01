@@ -1,5 +1,6 @@
 <template>
-  <div class="o-dialog__wrapper"
+  <transition name="dialog-fade">
+    <div class="o-dialog__wrapper"
     v-show="visible"
     @click.self="handleClose"
   >
@@ -23,6 +24,7 @@
       </div>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -54,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .o-dialog__wrapper {
   position: fixed;
   top: 0;
@@ -110,5 +112,14 @@ export default {
       }
     }
   }
+}
+
+.dialog-fade-enter-active, .dialog-fade-leave-active {
+  transition: all .3s;;
+}
+
+.dialog-fade-enter, .dialog-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>
