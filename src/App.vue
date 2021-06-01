@@ -2,6 +2,7 @@
   <div id="app">
     <o-input
       placeholder="请输入用户名"
+      v-model="username"
     ></o-input>
     <o-input placeholder="请输入密码" type="password"></o-input>
   </div>
@@ -9,6 +10,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      username: 'phoebe'
+    }
+  }
 }
 </script>
 

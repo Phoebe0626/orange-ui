@@ -7,6 +7,8 @@
       :placeholder="placeholder"
       :name="name"
       :disabled="disabled"
+      :value="value"
+      @input="handleInput"
     >
   </div>
 </template>
@@ -30,6 +32,15 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    value: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    handleInput (e) {
+      this.$emit('input', e.target.value)
     }
   }
 }
