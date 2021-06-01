@@ -6,6 +6,8 @@ import OButton from './components/button.vue'
 import ODialog from './components/dialog.vue'
 // 引入 input 组件
 import OInput from './components/input.vue'
+// 引入 switch 组件
+import OSwitch from './components/switch.vue'
 // 引入字体图标
 import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false
@@ -13,6 +15,7 @@ Vue.config.productionTip = false
 Vue.component(OButton.name, OButton)
 Vue.component(ODialog.name, ODialog)
 Vue.component(OInput.name, OInput)
+Vue.component(OSwitch.name, OSwitch)
 
 new Vue({
   render: h => h(App)

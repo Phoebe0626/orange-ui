@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <o-input
+    <!-- <o-input
       placeholder="请输入用户名"
       v-model="username"
       clearable
@@ -10,7 +10,9 @@
       placeholder="请输入密码"
       type="password"
       show-password
-    ></o-input>
+    ></o-input> -->
+    <o-switch v-model="active"></o-switch>
+    <o-switch v-model="active" active-color="red" inactive-color="green"></o-switch>
   </div>
 </template>
 
@@ -18,6 +20,7 @@
 export default {
   data () {
     return {
+      active: false,
       password: '',
       username: 'phoebe'
     }
