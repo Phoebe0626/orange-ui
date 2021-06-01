@@ -11,8 +11,9 @@
       type="password"
       show-password
     ></o-input> -->
-    <o-switch v-model="active"></o-switch>
-    <o-switch name="username" v-model="active" active-color="red" inactive-color="green"></o-switch>
+    <!-- <o-switch v-model="active"></o-switch> -->
+    <o-switch v-model="active" active-text="按年付费" inactive-text="按月付费"></o-switch>
+    <!-- <o-switch name="username" v-model="active" active-color="red" inactive-color="green"></o-switch> -->
   </div>
 </template>
 
