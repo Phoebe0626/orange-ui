@@ -3,8 +3,13 @@
     <o-input
       placeholder="请输入用户名"
       v-model="username"
+      clearable
     ></o-input>
-    <o-input placeholder="请输入密码" type="password"></o-input>
+    <o-input
+      placeholder="请输入密码"
+      type="password"
+      show-password
+    ></o-input>
   </div>
 </template>
 

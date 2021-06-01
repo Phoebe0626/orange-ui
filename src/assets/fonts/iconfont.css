@@ -5,7 +5,7 @@
        url('iconfont.ttf?t=1622371146463') format('truetype');
 }
 
-[class*="o-icon-"] {
+[class*='o-icon-'] {
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
@@ -13,7 +13,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.o-iconlocation2:before {
+.o-icon-view:before {
+  content: "\e6c9";
+}
+
+.o-icon-close:before {
+  content: "\e61a";
+}
+
+.o-icon-location2:before {
   content: "\e601";
 }
 
@@ -21,95 +29,95 @@
   content: "\e602";
 }
 
-.o-icon-up:before {
+.o-icon-shang:before {
   content: "\e603";
 }
 
-.o-icon-menu:before {
+.o-icon-caidan:before {
   content: "\e604";
 }
 
-.o-icon-edit:before {
+.o-icon-xiugai:before {
   content: "\e605";
 }
 
-.o-icon-user:before {
+.o-icon-yonghu:before {
   content: "\e606";
 }
 
-.o-icon-left:before {
+.o-icon-zuo:before {
   content: "\e607";
 }
 
-.o-icon-right:before {
+.o-icon-you:before {
   content: "\e608";
 }
 
-.o-icon-setting:before {
+.o-icon-shezhi:before {
   content: "\e609";
 }
 
-.o-icon-down:before {
+.o-icon-xia:before {
   content: "\e60a";
 }
 
-.o-icon-search:before {
+.o-icon-sousuo:before {
   content: "\e60b";
 }
 
-.o-icon-renovate:before {
+.o-icon-shuaxin:before {
   content: "\e60c";
 }
 
-.o-icon-back:before {
+.o-icon-fanhui:before {
   content: "\e60d";
 }
 
-.o-icon-mobile:before {
+.o-icon-shouji1:before {
   content: "\e60e";
 }
 
-.o-icon-password:before {
+.o-icon-mima:before {
   content: "\e60f";
 }
 
-.o-icon-file:before {
+.o-icon-wenjian1:before {
   content: "\e610";
 }
 
-.o-icon-delete:before {
+.o-icon-shanchu:before {
   content: "\e611";
 }
 
-.o-icon-document:before {
+.o-icon-wenjian:before {
   content: "\e612";
 }
 
-.o-icon-add:before {
+.o-icon-tianjia:before {
   content: "\e613";
 }
 
-.o-icon-quit:before {
+.o-icon-tuichu:before {
   content: "\e614";
 }
 
-.o-icon-warning:before {
+.o-icon-yujing:before {
   content: "\e615";
 }
 
-.o-icon-unchecked:before {
+.o-icon-shanchu1:before {
   content: "\e616";
 }
 
-.o-icon-checked:before {
+.o-icon-gouxuan:before {
   content: "\e617";
 }
 
-.o-icon-loading:before {
+.o-icon-jiazai:before {
   content: "\e618";
 }
 
-.o-icon-avatar:before {
+.o-icon-touxiang:before {
   content: "\e619";
 }
 
