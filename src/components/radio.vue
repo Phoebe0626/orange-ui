@@ -1,5 +1,11 @@
 <template>
-  <div class="o-radio" :class="{'is-checked': label === value}">
+  <div
+    class="o-radio"
+    :class="{
+      'is-checked': label === value,
+      'is-disabled': disabled
+      }"
+    >
     <span class="o-radio__input">
       <span class="o-radio__inner"></span>
       <input
@@ -8,9 +14,10 @@
         :name="name"
         :value="label"
         v-model="model"
+        :disabled="disabled"
       >
     </span>
-    <span class="o-radio__label" @click="model = label">
+    <span class="o-radio__label">
       <slot><template>{{ label }}</template></slot>
     </span>
   </div>
@@ -28,6 +35,10 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -116,6 +127,36 @@ export default {
       background-color: #409eff;
       &:after {
         transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+  .o-radio__original {
+    cursor: not-allowed;
+  }
+}
+
+.o-radio.is-disabled {
+  cursor: not-allowed;
+  .o-radio__input {
+    .o-radio__inner {
+      border-color: #e4e7ed;
+      background-color: #f5f7fa;
+    }
+  }
+  .o-radio__original {
+    cursor: not-allowed;
+  }
+}
+
+.o-radio.is-checked.is-disabled {
+  cursor: not-allowed;
+  .o-radio__input {
+    .o-radio__inner {
+      border-color: #e4e7ed;
+      background-color: #f5f7fa;
+      &:after {
+        transform: translate(-50%, -50%) scale(1);
+        background-color: #c0c4cc;
       }
     }
   }
