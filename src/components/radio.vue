@@ -1,5 +1,5 @@
 <template>
-  <div
+  <label
     class="o-radio"
     :class="{
       'is-checked': label === model,
@@ -20,7 +20,7 @@
     <span class="o-radio__label">
       <slot><template>{{ label }}</template></slot>
     </span>
-  </div>
+  </label>
 </template>
 
 <script>
