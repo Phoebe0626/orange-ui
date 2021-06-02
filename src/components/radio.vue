@@ -1,18 +1,45 @@
 <template>
-  <div class="o-radio">
+  <div class="o-radio" :class="{'is-checked': label === value}">
     <span class="o-radio__input">
       <span class="o-radio__inner"></span>
-      <input type="radio" class="o-radio__original">
+      <input
+        type="radio"
+        class="o-radio__original"
+        :name="name"
+        :value="label"
+        v-model="model"
+      >
     </span>
-    <span class="o-radio__label">
-      我是 label
+    <span class="o-radio__label" @click="model = label">
+      <slot><template>{{ label }}</template></slot>
     </span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ORadio'
+  name: 'ORadio',
+  props: {
+    label: {
+      type: [String, Number, Boolean],
+      default: ''
+    },
+    value: null,
+    name: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    model: {
+      get () {
+        return this.value
+      },
+      set (value) {
+        this.$emit('input', value)
+      }
+    }
+  }
 }
 </script>
 
@@ -67,12 +94,13 @@ export default {
       opacity: 0;
       outline: none;
       position: absolute;
-      z-index: -1;
+      // z-index: -1;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       margin: 0;
+      cursor: pointer;
     }
   }
   .o-radio__label {
