@@ -2,7 +2,7 @@
   <div
     class="o-radio"
     :class="{
-      'is-checked': label === value,
+      'is-checked': label === model,
       'is-disabled': disabled
       }"
     >
@@ -26,6 +26,11 @@
 <script>
 export default {
   name: 'ORadio',
+  inject: {
+    RadioGroup: {
+      default: ''
+    }
+  },
   props: {
     label: {
       type: [String, Number, Boolean],
@@ -42,12 +47,16 @@ export default {
     }
   },
   computed: {
+    isGroup () {
+      // 用于判断 radio 组件是否被 radio-group 组件包裹
+      return !!this.RadioGroup
+    },
     model: {
       get () {
-        return this.value
+        return this.isGroup ? this.RadioGroup.value : this.value
       },
       set (value) {
-        this.$emit('input', value)
+        this.isGroup ? this.RadioGroup.$emit('input', value) : this.$emit('input', value)
       }
     }
   }
@@ -130,9 +139,6 @@ export default {
       }
     }
   }
-  .o-radio__original {
-    cursor: not-allowed;
-  }
 }
 
 .o-radio.is-disabled {
@@ -159,6 +165,9 @@ export default {
         background-color: #c0c4cc;
       }
     }
+  }
+  .o-radio__original {
+    cursor: not-allowed;
   }
 }
 </style>

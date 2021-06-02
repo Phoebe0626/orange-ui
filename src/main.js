@@ -10,6 +10,8 @@ import OInput from './components/input.vue'
 import OSwitch from './components/switch.vue'
 // 引入 radio 组件
 import ORadio from './components/radio.vue'
+// 引入 radio-group 组件
+import ORadioGroup from './components/radio-group.vue'
 // 引入字体图标
 import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false
@@ -19,6 +21,7 @@ Vue.component(ODialog.name, ODialog)
 Vue.component(OInput.name, OInput)
 Vue.component(OSwitch.name, OSwitch)
 Vue.component(ORadio.name, ORadio)
+Vue.component(ORadioGroup.name, ORadioGroup)
 
 new Vue({
   render: h => h(App)
