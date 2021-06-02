@@ -68,7 +68,7 @@ export default {
   font-size: 14px;
   line-height: 20px;
   height: 20px;
-  // vertical-align: middle;
+  vertical-align: middle;
   .o-switch__input {
     position: absolute;
     width: 0;
@@ -97,18 +97,18 @@ export default {
   }
   .o-switch__core {
     margin: 0;
-    // display: inline-block;
+    display: inline-block;
     position: relative;
     width: 40px;
     height: 20px;
     border: 1px solid #dcdfe6;
-    // outline: none;
+    outline: none;
     border-radius: 10px;
     box-sizing: border-box;
     background-color: #dcdfe6;
     cursor: pointer;
     transition: border-color .3s, background-color .3s;
-    // vertical-align: middle;
+    vertical-align: middle;
     .o-switch__button {
       position: absolute;
       top: 1px;
