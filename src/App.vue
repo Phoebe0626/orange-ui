@@ -23,6 +23,11 @@
       <o-radio label="0">女</o-radio>
     </o-radio-group> -->
     <o-checkbox v-model="active" label="1">同意</o-checkbox>
+    <o-checkbox-group v-model="hobby">
+      <o-checkbox label="唱歌"></o-checkbox>
+      <o-checkbox label="跳舞"></o-checkbox>
+      <o-checkbox label="Rap"></o-checkbox>
+    </o-checkbox-group>
   </div>
 </template>
 
@@ -30,6 +35,7 @@
 export default {
   data () {
     return {
+      hobby: ['唱歌', '跳舞', 'Rap'],
       active: false,
       gender: '1',
       // active: false,

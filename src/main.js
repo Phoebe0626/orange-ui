@@ -14,6 +14,8 @@ import ORadio from './components/radio.vue'
 import ORadioGroup from './components/radio-group.vue'
 // 引入 checkbox 组件
 import OCheckbox from './components/checkbox.vue'
+// 引入 checkbox-group 组件
+import OCheckboxGroup from './components/checkbox-group.vue'
 // 引入字体图标
 import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false
@@ -25,6 +27,7 @@ Vue.component(OSwitch.name, OSwitch)
 Vue.component(ORadio.name, ORadio)
 Vue.component(ORadioGroup.name, ORadioGroup)
 Vue.component(OCheckbox.name, OCheckbox)
+Vue.component(OCheckboxGroup.name, OCheckboxGroup)
 
 new Vue({
   render: h => h(App)

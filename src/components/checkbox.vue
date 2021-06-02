@@ -1,5 +1,5 @@
 <template>
-  <label class="o-checkbox" :class="{'is-checked': model}">
+  <label class="o-checkbox" :class="{'is-checked': isChecked}">
     <span class="o-checkbox__input">
       <span class="o-checkbox__inner"></span>
       <input
@@ -7,6 +7,7 @@
         class="o-checkbox__original"
         :name="name"
         v-model="model"
+        :value="label"
       >
     </span>
     <span class="o-checkbox__label">
@@ -19,6 +20,11 @@
 <script>
 export default {
   name: 'OCheckbox',
+  inject: {
+    CheckboxGroup: {
+      default: ''
+    }
+  },
   props: {
     value: {
       type: Boolean,
@@ -34,12 +40,23 @@ export default {
     }
   },
   computed: {
+    isChecked () {
+      if (this.isGroup) {
+        return this.CheckboxGroup.value.some(item => item === this.label)
+      } else {
+        return !!this.model
+      }
+    },
+    // 判断当前组件是否被 checkbox-group 组件包裹
+    isGroup () {
+      return !!this.CheckboxGroup
+    },
     model: {
       get () {
-        return this.value
+        return this.isGroup ? this.CheckboxGroup.value : this.value
       },
       set (value) {
-        this.$emit('input', value)
+        this.isGroup ? this.CheckboxGroup.$emit('input', value) : this.$emit('input', value)
       }
     }
   }
