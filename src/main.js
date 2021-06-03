@@ -20,6 +20,8 @@ import OCheckboxGroup from './components/checkbox-group.vue'
 import OForm from './components/form.vue'
 // 引入 form-item 组件
 import OFormItem from './components/form-item.vue'
+import OTabs from './components/tabs.vue'
+import OTabPane from './components/tab-pane.vue'
 // 引入字体图标
 import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false
@@ -34,6 +36,8 @@ Vue.component(OCheckbox.name, OCheckbox)
 Vue.component(OCheckboxGroup.name, OCheckboxGroup)
 Vue.component(OForm.name, OForm)
 Vue.component(OFormItem.name, OFormItem)
+Vue.component(OTabs.name, OTabs)
+Vue.component(OTabPane.name, OTabPane)
 
 new Vue({
   render: h => h(App)

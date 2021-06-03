@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <o-form :model="model" label-width="60px">
+    <!-- <o-form :model="model" label-width="60px">
       <o-form-item label="用户名">
         <o-input placeholder="请输入用户名" v-model="model.username"></o-input>
       </o-form-item>
       <o-form-item label="选择">
         <o-switch v-model="model.active"></o-switch>
       </o-form-item>
-    </o-form>
+    </o-form> -->
+    <o-tabs v-model="activeName" @tab-click="handleClick">
+      <o-tab-pane label="标签一" name="first">标签一内容</o-tab-pane>
+      <o-tab-pane label="标签二" name="second">标签二内容</o-tab-pane>
+      <o-tab-pane label="标签三" name="third">标签三内容</o-tab-pane>
+    </o-tabs>
   </div>
 </template>
 
@@ -15,10 +20,16 @@
 export default {
   data () {
     return {
+      activeName: 'second',
       model: {
         username: 'phoebe',
         active: true
       }
+    }
+  },
+  methods: {
+    handleClick (name) {
+      this.activeName = name
     }
   }
 }
