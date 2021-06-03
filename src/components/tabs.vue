@@ -108,6 +108,16 @@ export default {
     position: relative;
     margin-bottom: 15px;
     overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #e4e7ed;
+      z-index: 1;
+    }
     .o-tabs__active-line {
       position: absolute;
       bottom: 0;
@@ -129,7 +139,6 @@ export default {
       font-weight: 500;
       position: relative;
       cursor: pointer;
-      z-index: 1;
       &:nth-child(2) {
         padding-left: 0;
       }
