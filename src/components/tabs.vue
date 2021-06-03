@@ -43,6 +43,9 @@ export default {
   },
   mounted () {
     this.tabs = this.getTabs()
+    this.$nextTick(() => {
+      this.setLine(this.value)
+    })
   },
   methods: {
     setLine (name) {
