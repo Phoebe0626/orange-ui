@@ -1,19 +1,21 @@
 <template>
-  <div class="o-select">
+  <div class="o-select" @click="isShow = !isShow">
     <div class="o-input">
       <input v-model="model" readonly :name="name" type="text" :placeholder="placeholder" class="o-input__inner">
       <span class="o-input__suffix">
         <div class="o-input__suffix-inner">
-          <i class="o-select__caret o-input__icon o-icon-up"></i>
+          <i :class="{'is-reverse': isShow}" class="o-select__caret o-input__icon o-icon-up"></i>
         </div>
       </span>
     </div>
-    <div class="o-select-dropdown__wrapper">
-      <ul class="o-select-dropdown__list">
-        <slot />
-      </ul>
-      <div class="o-select-dropdown__wrapper-arrow"></div>
-    </div>
+    <transition name="animation">
+      <div v-show="isShow" class="o-select-dropdown__wrapper">
+        <ul class="o-select-dropdown__list">
+          <slot />
+        </ul>
+        <div class="o-select-dropdown__wrapper-arrow"></div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -38,6 +40,7 @@ export default {
   },
   data () {
     return {
+      isShow: false,
       model: ''
     }
   },
@@ -98,6 +101,9 @@ export default {
         transition: transform .3s;
         transform: rotate(180deg);
         cursor: pointer;
+        &.is-reverse {
+          transform: rotate(0deg);
+        }
       }
       .o-input__icon {
         width: 25px;
@@ -111,6 +117,7 @@ export default {
 }
 
 .o-select-dropdown__wrapper {
+  max-height: 274px;
   position: relative;
   min-width: 240px;
   transform-origin: center top;
@@ -156,5 +163,14 @@ export default {
       border-bottom-color: #fff;
     }
   }
+}
+
+.animation-enter, .animation-leave-to {
+  transform: translateY(-15px);
+  opacity: 0;
+}
+
+.animation-enter-active, .animation-leave-active {
+  transition: all .3s;
 }
 </style>
