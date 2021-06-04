@@ -22,6 +22,7 @@ import OForm from './components/form.vue'
 import OFormItem from './components/form-item.vue'
 import OTabs from './components/tabs.vue'
 import OTabPane from './components/tab-pane.vue'
+import OLink from './components/link.vue'
 // 引入字体图标
 import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false
@@ -38,6 +39,7 @@ Vue.component(OForm.name, OForm)
 Vue.component(OFormItem.name, OFormItem)
 Vue.component(OTabs.name, OTabs)
 Vue.component(OTabPane.name, OTabPane)
+Vue.component(OLink.name, OLink)
 
 new Vue({
   render: h => h(App)

@@ -8,11 +8,23 @@
         <o-switch v-model="model.active"></o-switch>
       </o-form-item>
     </o-form> -->
-    <o-tabs v-model="activeName" @tab-click="handleClick">
-      <o-tab-pane label="标签一" name="first">标签一内容</o-tab-pane>
+    <!-- <o-tabs v-model="activeName" @tab-click="handleClick">
+      <o-tab-pane label="我是标签" name="first">标签一内容</o-tab-pane>
       <o-tab-pane label="标签二" name="second">标签二内容</o-tab-pane>
       <o-tab-pane label="标签三" name="third">标签三内容</o-tab-pane>
-    </o-tabs>
+    </o-tabs> -->
+    <o-link
+      disabled
+      href="https://www.baidu.com"
+      target="_blank"
+    >
+      默认链接
+    </o-link>
+    <o-link disabled type="primary">主要链接</o-link>
+    <o-link disabled type="success">成功链接</o-link>
+    <o-link disabled type="warning">警告链接</o-link>
+    <o-link disabled type="danger">危险链接</o-link>
+    <o-link disabled type="info" :underline="false">信息链接</o-link>
   </div>
 </template>
 
