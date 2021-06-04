@@ -25,7 +25,7 @@
     <o-link disabled type="warning">警告链接</o-link>
     <o-link disabled type="danger">危险链接</o-link>
     <o-link disabled type="info" :underline="false">信息链接</o-link> -->
-    <o-select v-model="value" placeholder="请选择食物" name="food">
+    <o-select disabled v-model="value" placeholder="请选择食物" name="food">
       <o-option
         v-for="item in options"
         :key="item.value"

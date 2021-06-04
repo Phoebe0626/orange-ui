@@ -1,7 +1,7 @@
 <template>
-  <div class="o-select" @click="isShow = !isShow">
-    <div class="o-input">
-      <input v-model="model" readonly :name="name" type="text" :placeholder="placeholder" class="o-input__inner">
+  <div class="o-select">
+    <div class="o-input" :class="{'is-disabled': disabled}" >
+      <input v-model="model" :disabled="disabled" readonly :name="name" type="text" :placeholder="placeholder" class="o-input__inner" @click="isShow = !isShow">
       <span class="o-input__suffix">
         <div class="o-input__suffix-inner">
           <i :class="{'is-reverse': isShow}" class="o-select__caret o-input__icon o-icon-up"></i>
@@ -34,6 +34,10 @@ export default {
     }
   },
   props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     value: String || Number || Boolean,
     placeholder: {
       type: String,
@@ -90,6 +94,14 @@ export default {
     display: block;
     position: relative;
     width: 100%;
+    &.is-disabled {
+      .o-input__inner {
+        cursor: not-allowed;
+        background-color: #f5f7fa;
+        border-color: #e4e7ed;
+        color: #c0c4cc;
+      }
+    }
     .o-input__inner {
       cursor: pointer;
       -webkit-appearance: none;
