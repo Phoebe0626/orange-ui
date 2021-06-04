@@ -1,5 +1,5 @@
 <template>
-  <li class="o-option">1</li>
+  <li class="o-select-dropdown__item">1</li>
 </template>
 
 <script>
@@ -7,3 +7,22 @@ export default {
   name: 'OOption'
 }
 </script>
+
+<style lang="scss" scoped>
+.o-select-dropdown__item {
+  font-size: 14px;
+  padding: 0 20px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #606266;
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:hover {
+    background-color: #f5f7fa;
+  }
+}
+</style>

@@ -73,9 +73,5 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  .o-input {
-    width: 180px;
-  }
-}
+
 </style>

@@ -12,6 +12,7 @@
       <ul class="o-select-dropdown__list">
         <slot />
       </ul>
+      <div class="o-select-dropdown__wrapper-arrow"></div>
     </div>
   </div>
 </template>
@@ -58,7 +59,7 @@ export default {
       outline: none;
       padding: 0 15px;
       transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-      width: 100%;
+      width: 240px;
     }
     .o-input__suffix {
       position: absolute;
@@ -86,6 +87,54 @@ export default {
         text-align: center;
         transition: all .3s;
       }
+    }
+  }
+}
+
+.o-select-dropdown__wrapper {
+  position: relative;
+  min-width: 240px;
+  transform-origin: center top;
+  z-index: 2041;
+  border: 1px solid #e4e7ed;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-sizing: border-box;
+  margin: 15px 0;
+  .o-select-dropdown__list {
+    list-style: none;
+    padding: 6px 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .o-select-dropdown__wrapper-arrow {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    margin-right: 3px;
+    border-top-width: 0;
+    border-bottom-color: #ebeef5;
+    border-width: 6px;
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,.03));
+    &::after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      content: '';
+      border-width: 6px;
+      top: 2px;
+      margin-left: -6px;
+      border-top-width: 0;
+      border-bottom-color: #fff;
     }
   }
 }
