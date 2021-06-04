@@ -1,7 +1,7 @@
 <template>
   <div class="o-select">
     <div class="o-input">
-      <input readonly :name="name" type="text" :placeholder="placeholder" class="o-input__inner">
+      <input v-model="model" readonly :name="name" type="text" :placeholder="placeholder" class="o-input__inner">
       <span class="o-input__suffix">
         <div class="o-input__suffix-inner">
           <i class="o-select__caret o-input__icon o-icon-up"></i>
@@ -20,8 +20,13 @@
 <script>
 export default {
   name: 'OSelect',
+  provide () {
+    return {
+      Select: this
+    }
+  },
   props: {
-    value: Boolean || String || Number,
+    value: String || Number || Boolean,
     placeholder: {
       type: String,
       default: '请选择'
@@ -29,6 +34,20 @@ export default {
     name: {
       type: String,
       default: ''
+    }
+  },
+  data () {
+    return {
+      model: ''
+    }
+  },
+  watch: {
+    value (val) {
+      this.$children.forEach(item => {
+        if (item.value === val) {
+          this.model = item.label
+        }
+      })
     }
   }
 }
