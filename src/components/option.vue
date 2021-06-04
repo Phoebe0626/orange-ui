@@ -1,7 +1,10 @@
 <template>
   <li
     class="o-select-dropdown__item"
-    :class="{'selected': value === Select.value}"
+    :class="{
+      'selected': value === Select.value,
+      'disabled': disabled
+    }"
     @click="handleOption"
   >
     {{ label ? label : value }}
@@ -17,6 +20,10 @@ export default {
     }
   },
   props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     label: {
       type: String || Number,
       default: ''
@@ -51,6 +58,13 @@ export default {
   &.selected {
     color: #409eff;
     font-weight: 700;
+  }
+  &.disabled {
+    color: #c0c4cc;
+    cursor: not-allowed;
+    &:hover {
+      background-color: #fff;
+    }
   }
 }
 </style>

@@ -31,6 +31,7 @@
         :key="item.value"
         :label="item.label"
         :value="item.value"
+        :disabled="item.disabled"
       ></o-option>
     </o-select>
   </div>
@@ -48,7 +49,8 @@ export default {
         label: '双皮奶'
       }, {
         value: '选项3',
-        label: '蚵仔煎'
+        label: '蚵仔煎',
+        disabled: true
       }, {
         value: '选项4',
         label: '龙须面'
