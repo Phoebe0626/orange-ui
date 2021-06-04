@@ -8,7 +8,13 @@
         </div>
       </span>
     </div>
-    <transition name="animation">
+    <transition
+      name="default"
+      @enter="menuEnter"
+      @leave="menuLeave"
+      enter-class="default-enter"
+      leave-class="default-leave-to"
+    >
       <div v-show="isShow" class="o-select-dropdown__wrapper">
         <ul class="o-select-dropdown__list">
           <slot />
@@ -42,6 +48,25 @@ export default {
     return {
       isShow: false,
       model: ''
+    }
+  },
+  methods: {
+    menuEnter (el, done) {
+      /* eslint-disable */
+      el.offsetWidth
+      let height = 0
+      this.$children.forEach(item => {
+        if (item.$options.name === 'OOption') {
+          height += item.$el.offsetHeight
+        }
+      })
+      el.style.maxHeight = height + 12 + 'px'
+    },
+    menuLeave (el, done) {
+      /* eslint-disable */
+      el.offsetWidth
+      el.style.maxHeight = 0
+      el.style.transition = 'all .2s ease-out'
     }
   },
   watch: {
@@ -117,7 +142,6 @@ export default {
 }
 
 .o-select-dropdown__wrapper {
-  max-height: 274px;
   position: relative;
   min-width: 240px;
   transform-origin: center top;
@@ -128,6 +152,7 @@ export default {
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   box-sizing: border-box;
   margin: 15px 0;
+  overflow: hidden;
   .o-select-dropdown__list {
     list-style: none;
     padding: 6px 0;
@@ -165,12 +190,14 @@ export default {
   }
 }
 
-.animation-enter, .animation-leave-to {
-  transform: translateY(-15px);
-  opacity: 0;
+.default-enter-active {
+  transition: max-height .2s ease-in;
 }
-
-.animation-enter-active, .animation-leave-active {
-  transition: all .3s;
+.default-leave-active {
+  transition: max-height .2s ease-out;
+}
+.default-enter, .default-leave-to {
+  max-height: 0;
+  border-width: 0;
 }
 </style>
