@@ -11,6 +11,7 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
 }
 
 .o-icon-view:before {
@@ -21,7 +22,7 @@
   content: "\e61a";
 }
 
-.o-icon-location2:before {
+.o-icon-location:before {
   content: "\e601";
 }
 
@@ -29,95 +30,95 @@
   content: "\e602";
 }
 
-.o-icon-shang:before {
+.o-icon-up:before {
   content: "\e603";
 }
 
-.o-icon-caidan:before {
+.o-icon-menu:before {
   content: "\e604";
 }
 
-.o-icon-xiugai:before {
+.o-icon-edit:before {
   content: "\e605";
 }
 
-.o-icon-yonghu:before {
+.o-icon-user:before {
   content: "\e606";
 }
 
-.o-icon-zuo:before {
+.o-icon-left:before {
   content: "\e607";
 }
 
-.o-icon-you:before {
+.o-icon-right:before {
   content: "\e608";
 }
 
-.o-icon-shezhi:before {
+.o-icon-setting:before {
   content: "\e609";
 }
 
-.o-icon-xia:before {
+.o-icon-down:before {
   content: "\e60a";
 }
 
-.o-icon-sousuo:before {
+.o-icon-search:before {
   content: "\e60b";
 }
 
-.o-icon-shuaxin:before {
+.o-icon-refresh:before {
   content: "\e60c";
 }
 
-.o-icon-fanhui:before {
+.o-icon-back:before {
   content: "\e60d";
 }
 
-.o-icon-shouji1:before {
+.o-icon-mobile:before {
   content: "\e60e";
 }
 
-.o-icon-mima:before {
+.o-icon-password:before {
   content: "\e60f";
 }
 
-.o-icon-wenjian1:before {
+.o-icon-file:before {
   content: "\e610";
 }
 
-.o-icon-shanchu:before {
+.o-icon-delete:before {
   content: "\e611";
 }
 
-.o-icon-wenjian:before {
+.o-icon-document:before {
   content: "\e612";
 }
 
-.o-icon-tianjia:before {
+.o-icon-add:before {
   content: "\e613";
 }
 
-.o-icon-tuichu:before {
+.o-icon-quit:before {
   content: "\e614";
 }
 
-.o-icon-yujing:before {
+.o-icon-warning:before {
   content: "\e615";
 }
 
-.o-icon-shanchu1:before {
+.o-icon-delete2:before {
   content: "\e616";
 }
 
-.o-icon-gouxuan:before {
+.o-icon-checked:before {
   content: "\e617";
 }
 
-.o-icon-jiazai:before {
+.o-icon-loading:before {
   content: "\e618";
 }
 
-.o-icon-touxiang:before {
+.o-icon-avatar:before {
   content: "\e619";
 }
 

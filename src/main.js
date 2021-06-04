@@ -23,6 +23,8 @@ import OFormItem from './components/form-item.vue'
 import OTabs from './components/tabs.vue'
 import OTabPane from './components/tab-pane.vue'
 import OLink from './components/link.vue'
+import OSelect from './components/select.vue'
+import OOption from './components/option.vue'
 // 引入字体图标
 import './assets/fonts/iconfont.css'
 Vue.config.productionTip = false
@@ -40,6 +42,8 @@ Vue.component(OFormItem.name, OFormItem)
 Vue.component(OTabs.name, OTabs)
 Vue.component(OTabPane.name, OTabPane)
 Vue.component(OLink.name, OLink)
+Vue.component(OSelect.name, OSelect)
+Vue.component(OOption.name, OOption)
 
 new Vue({
   render: h => h(App)
